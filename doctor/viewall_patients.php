@@ -16,6 +16,7 @@
             padding-right: 7px;
         }
     </style>
+    <!-- <link rel="stylesheet" type="text/css" href="DBMS-Project/style.css"> -->
 </head>
 <body>
 

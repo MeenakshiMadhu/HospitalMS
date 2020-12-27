@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Patient Record</title>
+    <!-- <link rel="stylesheet" type="text/css" href="DBMS-Project/style.css"> -->
+    
 </head>
 <body>
     
