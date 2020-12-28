@@ -1,8 +1,22 @@
-<?php
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Admin!</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="admin_style.css" rel="stylesheet">
+</head>
+<body>  
+<div class="container-login100" style="background-image: url('../images/image2.jpg');background-size: cover;">
+    
+<div><?php
     session_start();
 
-    include 'E:/xampp1/htdocs/DBMS-Project/project/db_connection.php';
-    include 'E:/xampp1/htdocs/DBMS-Project/project/create_tables.php';
+    include '../db_connection.php';
+    include '../create_tables.php';
     $conn = OpenCon();
     // echo "Connected Successfully";
 
@@ -10,7 +24,7 @@
     // echo "<br>Tables Created";
 
     
-    
+
     //$au_id = 'A123';
     $au_id=$_SESSION['curr_uid'];
     $_SESSION["au_id"] = $au_id;
@@ -38,51 +52,64 @@
 
         }
     }
-    echo "<br><h1>Welcome, " . $adminname . "!</h1>";
     
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Admin!</title>
-</head>
-<body>    
-<h3><a href="selectTable.php">Select Table</a></h3>
-    <h3><a href="deleteTables.php">Delete All Tables</a></h3>
-    
-    <h2>Manage Users</h2>
-    <a href="managespages/insertnewuser.php">Register New User</a>  <!--works with sessions, logs in manages-->
-    <br> 
-    <a href="managespages/searchusers.php">Search Users</a>               <!--works, doesn't need sessions-->
-    <br>
-
-    <h2>Manage Appointments</h2>
-    <a href="managespages\makeappointmentspage.php">Make Appointments</a>       <!--works with sessions-->
-    <br>
-    <a href="managespages\viewappointments.php">View Appointments</a>       <!--works, doesn't need sessions-->
-    <br>
+?></div>>
+    <nav id="header" class="navbar" style="margin: 20px;">
+    <div class="logo" style="margin: 0 0 20 5; font-size: 60px;">Admin Navigation Menu</div>
+    </nav>  
 
     
-    <h2>Manage Payments</h2>
-    <a href="managespages\makepaymentspage.php">Make Payment</a>                <!--works, doesn't need sessions, logs in manages-->
-    <br>
-    <a href="managespages\viewpaymentspage.php">View Payment Log</a>            <!--works, doesn't need sessions -->
-    <br>
+    <div class="card-deck" style="margin: 0 20 -100 20;">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Manage Users</h3>
+            <a href="managespages/insertnewuser.php" class="btn btn-outline-success btn-sm" style="font-size: 20px;">Register New User</a>
+            <a href="managespages/searchusers.php" class="btn btn-outline-success btn-sm" style="font-size: 20px;">Search User</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Manage Appointments</h3>
+            <a href="managespages/makeappointmentspage.php" class="btn btn-outline-success btn-sm" style="font-size: 20px;">Make Appointments</a>
+            <a href="managespages/viewappointments.php" class="btn btn-outline-success btn-sm" style="font-size: 20px;">View Appointments</a>
+          </div>
+        </div>
+    </div>
+
+    <div class="card-deck" style="margin: 120 20 -100 20;">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Manage Payments</h3>
+            <a href="managespages/makepaymentspage.php" class="btn btn-outline-success btn-sm" style="font-size: 20px;">Make Payment</a>
+            <a href="managespages/viewpaymentspage.php" class="btn btn-outline-success btn-sm" style="font-size: 20px;">View Payment Log</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Manage Departments</h3>
+            <a href="managespages/createdepartmentspage.php" class="btn btn-outline-success btn-sm" style="font-size: 20px;">Create Department</a>
+            <a href="managespages/viewdoctorspage.php" class="btn btn-outline-success btn-sm" style="font-size: 20px;">View Doctors by Department</a>
+          </div>
+        </div>
+    </div>
+
+    <div class="card-deck" style="margin: 120 20 -100 20;">
+
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Admin Log</h3>
+            <a href="managespages/viewhistory.php" class="btn btn-outline-success btn-sm" style="font-size: 20px;">View Admin Log</a>
+          </div>
+        </div>
+    </div>
     
-    <h2>Manage Departments</h2>
-    <a href="managespages\createdepartmentspage.php">Create Department</a>          <!--works, doesn't need sessions, logs in manages-->
-    <br>
-    <a href="managespages\viewdoctorspage.php">View Doctors by Department</a>       <!--works, doesn't need sessions --> 
-    <br>
-
-    <h3><a href="viewhistory.php">View History of Each Admin</a></h3>
-
-    <form action="../i.php" method="post">
-      <input class="button" type ="submit" value="Go Back">
+    <div class="container-login100-form-btn" style="margin-top: 150;">
+      <form action="../i.php" method="post">
+      <input class="login100-form-btn button" style="font-size: 20px;" type ="submit" value="Go Back">
     </form>
-
+  </div>
+</div>
 </body>
 </html>

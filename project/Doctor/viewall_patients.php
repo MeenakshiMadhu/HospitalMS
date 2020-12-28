@@ -20,7 +20,7 @@
 <body>
 
 <?php
-  include '/Applications/XAMPP/xamppfiles/htdocs/project/db_connection.php';
+  include 'E:/xampp1/htdocs/DBMS-Project/project/db_connection.php';
   $conn = OpenCon();
   echo "Connected Successfully";
 

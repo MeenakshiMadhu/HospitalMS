@@ -1,8 +1,8 @@
 <?php
   session_start();
-  include 'E:/xampp1/htdocs/DBMS-Project/login/db_connection.php';
+  include 'E:/xampp1/htdocs/DBMS-Project/project/db_connection.php';
     $conn = OpenCon();
-    echo "Connected Successfully";
+    //echo "Connected Successfully";
 
     $u_id = "";
 
@@ -57,20 +57,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->  
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="css/util.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
 </head>
 <body>
-    <h1>Have an account? Login Here</h1>
+  
+  <div class="limiter">
+    <div class="container-login100" style="background-image: url('images/bg-03.jpg');">
+      <div class="wrap-login100">
+        <form class="login100-form validate-form" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+          <!-- <span class="login100-form-logo">
+            <i class="zmdi zmdi-landscape"></i>
+          </span> -->
+
+          <span class="login100-form-title p-b-34 p-t-27">
+            Log in
+          </span>
+          
+            <div class="wrap-input100 validate-input" data-validate = "Enter UID">
+
+              <input class="input100" type="text" name="u_id" placeholder="Enter UID" required>
+              <span class="focus-input100" data-placeholder="&#xf207;"></span>
+            </div>
+
+            <div class="container-login100-form-btn">
+              <button class="login100-form-btn">
+                Login
+              </button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+
+  <div id="dropDownSelect1"></div>
+  
+<!--===============================================================================================-->
+  <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/bootstrap/js/popper.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/daterangepicker/moment.min.js"></script>
+  <script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+  <script src="js/main.js"></script>
+
+
+
+    <!-- <h1>Have an account? Login Here</h1>
     <br>
 
-    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-            <!-- use get if you dont mind the value being in url, post hides the passed data from the url -->
-            <!-- use REQUEST in the event that you ahve no idea what the data is like, eg if there are many forms in your html code -->
-                    <!-- ..., by defaultit contains the contents of GET, POST, and COOKIE as well -->
+    <form method="POST" action="<?php //echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+      
         UID:           <input type="text" name="u_id" placeholder="Enter your ID"  required>
         <br>
         <button type="submit">Login</button>
         
-    </form>
+    </form> -->
 </body>
 </html>
 
