@@ -37,9 +37,9 @@
     	<div class="card-deck" style="margin: 120 20 -100 20;">
     		<div class="card">
         		<div class="card-body">
-          			<form action="viewall_patients.php" method="post">
+          			<form action="deletec.php" method="post">
                 		<h4 class="card-title">Enter appointment ID of appointment to cancel</h4>
-							<input class="input100" type="text" name="app_id" placeholder="Enter Appointment ID" required> <br>
+							<input class="input100" style="color: black;" type="text" name="app_id" placeholder="Enter Appointment ID" required> <br>
                 		<input class="btn btn-outline-success btn-sm" type ="submit" value="Go" style="font-size: 20px; margin-top: 10px">
           			</form>
         		</div>

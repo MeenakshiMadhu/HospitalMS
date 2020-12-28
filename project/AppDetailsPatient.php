@@ -10,10 +10,10 @@
   </head>
   <body>
         <div class="container-login100" style="background-image: url('images/image1.jpg');">
-    <nav id="header" class="navbar">
-    <div class="logo" style="margin: 80 0 0 30; font-size: 60px;">Patient Medical History</div>
-  </nav>
-		<div style="margin: 50 0 0 0;">
+			<nav id="header" class="navbar">
+				<div class="logo" style="margin: 80 0 0 30; font-size: 60px;">Patient Medical History</div>
+			</nav>
+			<div style="margin: 50 0 0 0;">
 			<?php
 				session_start();
 				$u_id=$_SESSION['curr_uid'];
@@ -73,9 +73,9 @@
 			?>
 		</div>
 		<div class="container-login100-form-btn" style="margin-top: -40;">
-      <form action="../i.php" method="post">
-      <input class="login100-form-btn button" style="font-size: 20px;" type ="submit" value="Go Back">
-    </form>
-  </div>
+      		<form action="../i.php" method="post">
+     			<input class="login100-form-btn button" style="font-size: 20px;" type ="submit" value="Go Back">
+    		</form>
+  		</div>
    </body>
 </html>
