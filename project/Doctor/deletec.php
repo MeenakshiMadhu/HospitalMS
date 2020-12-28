@@ -16,7 +16,7 @@
   <div class="limiter">
     <div class="container-login100" style="background-image: url('../images/image1.jpg');">
       <?php
-        include 'E:/xampp1/htdocs/DBMS-Project/project/db_connection.php';
+        include '../db_connection.php';
         $conn = OpenCon();
          //echo "Connected Successfully";
 
@@ -34,7 +34,7 @@
             <div class="card-body" align="center">
               <h4 class="card-title">Appointment ID does not exist. Enter correct ID</h4>
               <form action="cancelappointment.php" method="post">
-              <input class="login100-form-btn button" style="font-size: 20px;" type ="submit" value="Go Back">
+              <input class="btn btn-outline-info btn-sm" style="font-size: 20px;" type ="submit" value="Go Back">
               </form>
             </div>
         </div>
@@ -59,7 +59,7 @@
             <div class="card-body" align="center">
               <h4 class="card-title">Succesfully cancelled Appointment</h4>
               <form action="cancelappointment.php" method="post">
-              <input class="login100-form-btn button" style="font-size: 20px;" type ="submit" value="Go Back">
+              <input class="btn btn-outline-success btn-sm" style="font-size: 20px;" type ="submit" value="Go Back">
               </form>
             </div>
         </div>

@@ -44,7 +44,12 @@
           			</form>
         		</div>
     		</div>
-    	</div>
+        </div>
+        <div class="container-login100-form-btn" style="margin-top: -40;">
+            <form action="../Doctor/DoctorMainPage.php" method="post">
+                <input class="login100-form-btn button" style="font-size: 20px;" type ="submit" value="Go Back">
+            </form>
+        </div>
     </div>
   	</div>
 

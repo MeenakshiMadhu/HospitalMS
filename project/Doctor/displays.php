@@ -23,7 +23,7 @@ session_start();
       </nav>
       <div style="margin: 50 0 0 0;">
         <?php
-        include 'E:/xampp1/htdocs/DBMS-Project/project/db_connection.php';
+        include '../db_connection.php';
         $conn = OpenCon();
         // echo "Connected Successfully";
 
