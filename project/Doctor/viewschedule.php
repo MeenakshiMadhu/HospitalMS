@@ -24,6 +24,11 @@
             padding-right: 7px;
         }
     </style> -->
+    <style>
+        .heading {
+            display:    block;
+        }
+    </style>
 
 </head>
 <body>
@@ -70,8 +75,13 @@
   $results1 = mysqli_query($conn,$sql1);
   $num=mysqli_num_rows($results);
   $num1=mysqli_num_rows($results1);
-  
-    echo "<div style='margin: auto; font-size:30px;'><br>Today's Schedule<br></div>";
+
+    //  echo "<div style='margin: auto; font-size:30px;'><br>Today's Schedule<br></div>";
+?>
+    <h2 style="width: 100%; margin-bottom: 0px; padding-bottom:0px;">Today's Schedule</h2>
+<!-- <div>.</div> -->
+<!-- <div class="heading">Today's Schedule</div> -->
+<?php
 
     if($num >0)
             {
@@ -100,12 +110,16 @@
             echo "</tbody></table>";
         }
         else {
-            echo "<div style='margin: auto; font-size:30px;'>"."0 records<br></div>";
-            echo "<br>";
+            ?>
+                <h4 style="width: 100%; margin-bottom: 0px; padding-bottom:0px;">No appointments for today!</h4>
+            <?php
           }
 
-    echo "<div style='margin: auto; font-size:30px;'>Upcoming Schedule<br></div>";
-    echo "<br>";
+    // echo "<div style='margin: auto; font-size:30px;'>Upcoming Schedule<br></div>";
+    // echo "<br>";
+    ?>
+    <h2 style="width: 100%; margin-bottom: 0px; padding-bottom:0px;">Upcoming Schedule</h2>
+    <?php
 
     if($num1 >0)
             {
@@ -134,9 +148,9 @@
             echo "</tbody></table>";
         }
         else {
-            echo "<div style='margin: auto; font-size:30px;'>"."0 records<br></div>";
-            echo "<br>";
-
+            ?>
+            <h4 style="width: 100%; margin-bottom: 0px; padding-bottom:0px;">No upcoming appointments!</h4>
+            <?php
           }
 
         mysqli_close($conn);
