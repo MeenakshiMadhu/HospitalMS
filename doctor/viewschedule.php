@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Today's Schedule</title>
+  <title>View Schedule</title>
   <style>
         table,
         td {
@@ -34,27 +34,31 @@
 // //   $date = $datetime->format('Y-m-d '."00:00:00");
 // //   echo $currentdateTime;
 // //   echo $date;
+
 $today = new DateTime();
 $today->setTime(0,0);
 $today = $today->format('Y-m-d H:i:s');
-// echo $today;
+$tomorrow = new DateTime('tomorrow');
+$tomorrow->setTime(0,0);
+$tomorrow = $tomorrow->format('Y-m-d H:i:s');
+// echo $tomorrow;
 
 $dID = $_SESSION['u_id'];
 
-$sql = "SELECT A.app_id, A.pu_id, A.du_id, A.appdateTime, A.prescription, U.uname, U.mobile_no FROM Appointments A, Users U WHERE A.du_id ='$dID'AND A.pu_id=U.u_id AND A.appdateTime >='$today' ORDER BY A.appdateTime;";
+$sql = "SELECT A.app_id, A.pu_id, A.du_id, A.appdateTime, A.prescription, U.uname, U.mobile_no FROM Appointments A, Users U WHERE A.du_id ='$dID'AND A.pu_id=U.u_id AND A.appdateTime >='$today' AND A.appdateTime <='$tomorrow' ORDER BY A.appdateTime;";
+
+$sql1 = "SELECT A.app_id, A.pu_id, A.du_id, A.appdateTime, A.prescription, U.uname, U.mobile_no FROM Appointments A, Users U WHERE A.du_id ='$dID'AND A.pu_id=U.u_id AND A.appdateTime >='$today' ORDER BY A.appdateTime;";
 
 $results = mysqli_query($conn,$sql);
+$results1 = mysqli_query($conn,$sql1);
 $num=mysqli_num_rows($results);
+$num1=mysqli_num_rows($results1);
 
-if(!$num){
-    ?>
-	<p><a href="doctor_mainpage.php">Go back to main page.</a></p>
-	<?php
-	die('No appointments' . mysqli_error($conn));
-}
+?>
+<h2>Today's Schedule</h2>
 
-else
-{
+<?php
+if($num) {
     ?>
     <table>
                 <thead>
@@ -85,6 +89,53 @@ else
                 </tbody>
             </table>
     <?php
+}
+else {
+        echo "No appointments for today!<br>";
+}
+
+?>
+<h2>Upcoming Schedule</h2>
+<?php
+
+if($num1){
+    ?>
+    <table>
+                <thead>
+                    <tr>
+                        <td>Appointment ID</td>
+                        <td>Appointment Date & Time</td>
+                        <td>Patient ID</td>
+                        <td>Patient Name</td>
+                        <td>Mobile Num.</td>
+                        <td>Prescription</td>
+                    </tr>
+                </thead>
+                <tbody>
+    <?php
+    while ($row = mysqli_fetch_array($results1)) {
+        ?>
+                    <tr>
+                        <td><?php echo $row['app_id']; ?> </td>
+                        <td><?php echo $row['appdateTime']; ?> </td>
+                        <td><?php echo $row['pu_id']; ?> </td>
+                        <td><?php echo $row['uname']; ?> </td>
+                        <td><?php echo $row['mobile_no']; ?> </td>
+                        <td><?php echo $row['prescription']; ?> </td>
+                    </tr>
+    <?php
+    }
+    ?>
+                </tbody>
+            </table>
+    <?php
+}
+else {
+    echo "No upcoming appointments!<br>";
+    ?>
+    <p><a href="doctor_mainpage.php">Go back to main page</a></p>
+    <?php
+    die('' . mysqli_error($conn));
 }
 	
 mysqli_close($conn);
