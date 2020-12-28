@@ -24,10 +24,24 @@
   include 'E:/xampp1/htdocs/DBMS-Project/login/db_connection.php';
   $conn = OpenCon();
   echo "Connected Successfully";
+  echo "<br>";
 
-  $dID = $_SESSION['u_id'];
+//   $datetime = new DateTime();
+//   $timezone = new DateTimeZone('Europe/Bucharest');
+//   $datetime->setTimezone($timezone);
+//   $datetime->add(new DateInterval('PT3H30M'));
+//   $currentdateTime = $datetime->format('Y-m-d H:i:s');
+// //   $date = $datetime->format('Y-m-d '."00:00:00");
+// //   echo $currentdateTime;
+// //   echo $date;
+$today = new DateTime();
+$today->setTime(0,0);
+$today = $today->format('Y-m-d H:i:s');
+// echo $today;
 
-$sql = "SELECT A.app_id, A.pu_id, A.du_id, A.appdateTime, A.prescription, U.uname, U.mobile_no FROM Appointments A, Users U WHERE A.du_id ='$dID'AND A.pu_id=U.u_id ORDER BY A.appdateTime DESC;";
+$dID = $_SESSION['u_id'];
+
+$sql = "SELECT A.app_id, A.pu_id, A.du_id, A.appdateTime, A.prescription, U.uname, U.mobile_no FROM Appointments A, Users U WHERE A.du_id ='$dID'AND A.pu_id=U.u_id AND A.appdateTime >='$today' ORDER BY A.appdateTime;";
 
 $results = mysqli_query($conn,$sql);
 $num=mysqli_num_rows($results);
