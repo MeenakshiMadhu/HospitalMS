@@ -1,8 +1,8 @@
 <?php
     session_start();
 
-    include '/Applications/XAMPP/xamppfiles/htdocs/project/db_connection.php';
-    include '/Applications/XAMPP/xamppfiles/htdocs/project/create_tables.php';
+    include 'E:/xampp1/htdocs/DBMS-Project/project/db_connection.php';
+    include 'E:/xampp1/htdocs/DBMS-Project/project/create_tables.php';
     $conn = OpenCon();
     // echo "Connected Successfully";
 
@@ -10,7 +10,7 @@
     // echo "<br>Tables Created";
 
     
-
+    
     //$au_id = 'A123';
     $au_id=$_SESSION['curr_uid'];
     $_SESSION["au_id"] = $au_id;

@@ -1,6 +1,6 @@
 <?php
   session_start();
-  include '/Applications/XAMPP/xamppfiles/htdocs/project/db_connection.php';
+  include 'E:/xampp1/htdocs/DBMS-Project/login/db_connection.php';
     $conn = OpenCon();
     echo "Connected Successfully";
 
