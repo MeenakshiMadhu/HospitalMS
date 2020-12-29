@@ -1,0 +1,104 @@
+html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, select, p { 
+      padding: 0;
+      margin: 0;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 16px;
+      color: #eee;
+      }
+      body {
+      background: rgba(0,0,0,0.8);
+      }
+      h2 {
+      font-weight: 400;
+      margin: 0 0 0 10px;
+      }
+      form {
+      padding: 25px;
+      }
+
+      .button{
+      padding: 10px;
+      color: black;
+      background-color: white;
+      border: solid transparent;
+      border-radius: 10px;
+      }
+
+      .button:hover{
+      cursor: pointer;
+      color: white;
+      background-color: transparent;
+      border: solid white;
+      border-radius: 10px;
+      }
+
+      .col{
+      margin: 10px;
+      }
+
+      .radio{
+      padding: 10px;
+      display: inline;
+      }
+      #head{
+      font-weight: bold;
+      font-size: 25px;
+      padding-bottom: 10px;
+      }
+
+      #smallhead{
+      font-weight: bold;
+      }
+
+      .title {
+      font-size: 25px; 
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      }
+      .info {
+      display: flex;
+      flex-direction: column;
+      }
+
+      input, select {
+      padding: 5px;
+      margin-bottom: 30px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #eee;
+      }
+      input::placeholder {
+      color: #eee;
+      }
+
+      textarea{
+      padding: 5px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #eee;    
+      }
+      option:focus {
+      border: none;
+      }
+      option {
+      background: black; 
+      border: none;
+      }
+      button {
+      width: 100%;
+      }
+      button:hover{
+      background: #85d6de;
+      }
+      @media (min-width: 568px) {
+      html, body {
+      height: 100%;
+      }
+      form {
+      flex: 1;
+      height: auto;
+      }
+      }
